@@ -59,12 +59,42 @@ header {
     visibility: hidden;
 }
 
-/* Custom Headers */
+/* Custom Headers - Global Enforcement */
 h1,
 h2,
-h3 {
-    color: #1A1A1A;
-    font-weight: 600;
+h3,
+h4,
+h5,
+h6,
+.stMarkdown,
+p,
+li {
+    color: #212121 !important;
+}
+
+/* Fix for Metrics (Big Cards) */
+[data-testid="stMetricLabel"] {
+    color: #424242 !important;
+    /* Dark Grey */
+}
+
+[data-testid="stMetricValue"] {
+    color: #000000 !important;
+    /* Pure Black */
+}
+
+/* Fix for Widget Labels (Input Fields) */
+.stSelectbox label,
+.stTextInput label,
+.stNumberInput label,
+.stDateInput label,
+.stMultiSelect label {
+    color: #212121 !important;
+}
+
+/* Fix for Expander Headers */
+.streamlit-expanderHeader p {
+    color: #212121 !important;
 }
 
 /* Tabs Styling */
