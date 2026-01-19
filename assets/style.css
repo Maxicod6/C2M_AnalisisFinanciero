@@ -4,10 +4,20 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* Sidebar decoration */
+/* Sidebar decoration - Dark Mode */
 [data-testid="stSidebar"] {
-    background-color: #FFFFFF;
-    border-right: 1px solid #E0E0E0;
+    background-color: #1A237E;
+    /* Dark Blue */
+    border-right: 1px solid #1A237E;
+}
+
+/* Force Sidebar Text Color to White */
+[data-testid="stSidebar"] * {
+    color: #FFFFFF !important;
+}
+
+[data-testid="stSidebar"] .stRadio label {
+    color: #FFFFFF !important;
 }
 
 /* Custom Cards for Metrics */
@@ -26,10 +36,7 @@ div[data-testid="metric-container"]:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Card-like containers for Charts */
-.element-container {
-    /* Targetting general Plotly charts usually wrapped in element-container under stMain */
-}
+/* Card-like containers for Charts - Rule removed */
 
 /* Styling Dataframes to look cleaner */
 [data-testid="stDataFrame"] {
