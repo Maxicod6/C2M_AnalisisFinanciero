@@ -146,21 +146,21 @@ def show_gastos(dm):
 
     st.markdown(f"""
     <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
-        <div style="flex: 1; min-width: 200px; padding: 15px; background: white; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.05); border-left: 5px solid #1E88E5;">
-            <p style="font-size: 12px; color: #666; margin:0;">Gasto Mensual ({selected_month}/{selected_year})</p>
-            <h2 style="margin: 0; color: #333;">${monthly_total:,.2f}</h2>
+        <div style="flex: 1; min-width: 200px; padding: 15px; background: #151A28; border-radius: 16px; border: 1px solid #2A3245; box-shadow: 0 4px 10px rgba(0,0,0,0.2); border-left: 5px solid #1E88E5;">
+            <p style="font-size: 12px; color: #94A3B8; margin:0;">Gasto Mensual ({selected_month}/{selected_year})</p>
+            <h2 style="margin: 0; color: #FFFFFF; font-size: 1.8rem;">${monthly_total:,.2f}</h2>
         </div>
-        <div style="flex: 1; min-width: 200px; padding: 15px; background: white; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.05); border-left: 5px solid #43A047;">
-            <p style="font-size: 12px; color: #666; margin:0;">Gasto Anual ({selected_year})</p>
-            <h2 style="margin: 0; color: #333;">${annual_total:,.2f}</h2>
+        <div style="flex: 1; min-width: 200px; padding: 15px; background: #151A28; border-radius: 16px; border: 1px solid #2A3245; box-shadow: 0 4px 10px rgba(0,0,0,0.2); border-left: 5px solid #43A047;">
+            <p style="font-size: 12px; color: #94A3B8; margin:0;">Gasto Anual ({selected_year})</p>
+            <h2 style="margin: 0; color: #FFFFFF; font-size: 1.8rem;">${annual_total:,.2f}</h2>
         </div>
-        <div style="flex: 1; min-width: 200px; padding: 15px; background: white; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.05); border-left: 5px solid #FBC02D;">
-            <p style="font-size: 12px; color: #666; margin:0;">Recurrentes (Año)</p>
-            <h3 style="margin: 0; color: #333;">${recurrente_total:,.2f}</h3>
+        <div style="flex: 1; min-width: 200px; padding: 15px; background: #151A28; border-radius: 16px; border: 1px solid #2A3245; box-shadow: 0 4px 10px rgba(0,0,0,0.2); border-left: 5px solid #FBC02D;">
+            <p style="font-size: 12px; color: #94A3B8; margin:0;">Recurrentes (Año)</p>
+            <h3 style="margin: 0; color: #FFFFFF; font-size: 1.5rem;">${recurrente_total:,.2f}</h3>
         </div>
-      <div style="flex: 1; min-width: 200px; padding: 15px; background: white; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.05); border-left: 5px solid #8E24AA;">
-            <p style="font-size: 12px; color: #666; margin:0;">No Recurrentes</p>
-            <h3 style="margin: 0; color: #333;">${no_recurrente_total:,.2f}</h3>
+      <div style="flex: 1; min-width: 200px; padding: 15px; background: #151A28; border-radius: 16px; border: 1px solid #2A3245; box-shadow: 0 4px 10px rgba(0,0,0,0.2); border-left: 5px solid #8E24AA;">
+            <p style="font-size: 12px; color: #94A3B8; margin:0;">No Recurrentes</p>
+            <h3 style="margin: 0; color: #FFFFFF; font-size: 1.5rem;">${no_recurrente_total:,.2f}</h3>
         </div>
     </div>
     """, unsafe_allow_html=True)

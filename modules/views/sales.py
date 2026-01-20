@@ -59,12 +59,12 @@ def show_sales(dm):
                             
                         # Card HTML
                         st.markdown(f"""
-                        <div style="border: 1px solid #ddd; border-radius: 10px; padding: 15px; margin-bottom: 10px; border-left: 5px solid {card_color}; background-color: white;">
-                            <h4 style="margin: 0; color: #333;">{row['Cliente']}</h4>
-                            <p style="margin: 0; font-size: 14px; color: #666;">Monto: <b>${row['Monto_Total']:,.2f}</b></p>
-                            <p style="margin: 0; font-size: 12px; color: {card_color}; font-weight: bold;">{status_text}</p>
-                            <p style="margin: 0; font-size: 12px; color: #999;">Venc: {row['Fecha_Vencimiento']}</p>
-                            <p style="margin: 0; font-size: 12px; color: #999;">Vendedor: {row.get('Vendedor', '-')}</p>
+                        <div style="border: 1px solid #2A3245; border-radius: 12px; padding: 15px; margin-bottom: 15px; border-left: 5px solid {card_color}; background-color: #151A28; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+                            <h4 style="margin: 0; color: #FFFFFF;">{row['Cliente']}</h4>
+                            <p style="margin: 0; font-size: 14px; color: #E2E8F0;">Monto: <b style="color: #FFFFFF;">${row['Monto_Total']:,.2f}</b></p>
+                            <p style="margin: 5px 0 0 0; font-size: 12px; color: {card_color}; font-weight: bold;">{status_text}</p>
+                            <p style="margin: 0; font-size: 12px; color: #94A3B8;">Venc: {row['Fecha_Vencimiento']}</p>
+                            <p style="margin: 0; font-size: 12px; color: #94A3B8;">Vendedor: {row.get('Vendedor', '-')}</p>
                         </div>
                         """, unsafe_allow_html=True)
                         
