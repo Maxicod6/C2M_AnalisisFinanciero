@@ -1,0 +1,9 @@
+[theme]
+base="dark"
+primaryColor="#FF3366" # Vibrant Red/Pink for accents
+backgroundColor="#0A0E17" # Very Dark Blue/Black (Deep Space)
+secondaryBackgroundColor="#151A28" # Slightly lighter for Sidebar/Cards
+textColor="#FFFFFF"
+font="sans serif"
+[server]
+headless = true
