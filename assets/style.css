@@ -1,118 +1,178 @@
-/* Main Background */
+/* Main Background - FORCE via CSS as fail-safe */
 .stApp {
-    background-color: #E0E0E0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #0A0E17 !important;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Sidebar decoration - Dark Mode */
+/* ---------------------------------------------------------------------
+   SIDEBAR STYLING
+   --------------------------------------------------------------------- */
 [data-testid="stSidebar"] {
-    background-color: #1A237E;
-    /* Dark Blue */
-    border-right: 1px solid #1A237E;
+    background-color: #151A28;
+    border-right: 1px solid #2A3245;
 }
 
-/* Force Sidebar Text Color to White */
+/* Sidebar Text */
 [data-testid="stSidebar"] * {
-    color: #FFFFFF !important;
+    color: #E2E8F0 !important;
 }
 
+/* Sidebar Active/Hover Elements */
 [data-testid="stSidebar"] .stRadio label {
-    color: #FFFFFF !important;
+    font-weight: 500;
 }
 
-/* Custom Cards for Metrics */
+/* ---------------------------------------------------------------------
+   CARDS & CONTAINERS (The "Dashboard" Look)
+   --------------------------------------------------------------------- */
+
+/* Metrics (KPI Cards) */
 div[data-testid="metric-container"] {
-    background-color: white;
+    background: linear-gradient(135deg, #1E2536 0%, #151A28 100%);
+    border: 1px solid #2A3245;
+    border-radius: 16px;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border: 1px solid #EAEAEA;
-    text-align: center;
-    transition: transform 0.2s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    transition: all 0.3s ease;
 }
 
 div[data-testid="metric-container"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+    /* Blue glow on hover */
+    border-color: #3B82F6;
 }
 
-/* Card-like containers for Charts - Rule removed */
+/* Metric Labels */
+[data-testid="stMetricLabel"] {
+    color: #94A3B8 !important;
+    /* Slate 400 */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
 
-/* Styling Dataframes to look cleaner */
+/* Metric Values */
+[data-testid="stMetricValue"] {
+    color: #FFFFFF !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------------------------------------------------------------
+   CHARTS & DATAFRAMES
+   --------------------------------------------------------------------- */
 [data-testid="stDataFrame"] {
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: #151A28;
+    border-radius: 16px;
+    border: 1px solid #2A3245;
+    padding: 15px;
 }
 
-/* Remove Streamlit branding noise if possible (hamburger menu usually controlled by config but css helps) */
-#MainMenu {
-    visibility: hidden;
+/* ---------------------------------------------------------------------
+   INPUT WIDGETS
+   --------------------------------------------------------------------- */
+.stTextInput input,
+.stSelectbox div[data-baseweb="select"],
+.stNumberInput input {
+    background-color: #0A0E17 !important;
+    border: 1px solid #2A3245 !important;
+    border-radius: 10px !important;
+    color: white !important;
 }
 
-footer {
-    visibility: hidden;
+.stTextInput input:focus,
+.stSelectbox div[data-baseweb="select"]:focus-within {
+    border-color: #FF3366 !important;
+    /* Red Accent focus */
+    box-shadow: 0 0 0 2px rgba(255, 51, 102, 0.2);
 }
 
-header {
-    visibility: hidden;
+/* Labels */
+.stSelectbox label,
+.stTextInput label,
+.stNumberInput label,
+.stDateInput label {
+    color: #E2E8F0 !important;
+    font-weight: 500;
 }
 
-/* Custom Headers - Global Enforcement */
+/* ---------------------------------------------------------------------
+   BUTTONS (Gradient)
+   --------------------------------------------------------------------- */
+div.stButton>button {
+    background: linear-gradient(90deg, #FF3366 0%, #FF5B33 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+div.stButton>button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(255, 51, 102, 0.5);
+}
+
+/* ---------------------------------------------------------------------
+   TABS
+   --------------------------------------------------------------------- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 15px;
+    background-color: transparent;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 45px;
+    background-color: #151A28;
+    border-radius: 12px;
+    color: #94A3B8;
+    border: 1px solid #2A3245;
+    padding: 0 25px;
+    transition: all 0.3s;
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(90deg, #3B82F6 0%, #2563EB 100%);
+    /* Blue Gradient active */
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* ---------------------------------------------------------------------
+   CLEANUP & HEADERS
+   --------------------------------------------------------------------- */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-.stMarkdown,
-p,
-li {
-    color: #212121 !important;
+h6 {
+    color: #FFFFFF !important;
 }
 
-/* Fix for Metrics (Big Cards) */
-[data-testid="stMetricLabel"] {
-    color: #424242 !important;
-    /* Dark Grey */
+.stMarkdown p,
+.stMarkdown li {
+    color: #CBD5E1 !important;
+    /* Slate 300 */
 }
 
-[data-testid="stMetricValue"] {
-    color: #000000 !important;
-    /* Pure Black */
+/* Expander */
+.streamlit-expanderHeader {
+    background-color: #151A28 !important;
+    border-radius: 10px !important;
+    border: 1px solid #2A3245;
 }
 
-/* Fix for Widget Labels (Input Fields) */
-.stSelectbox label,
-.stTextInput label,
-.stNumberInput label,
-.stDateInput label,
-.stMultiSelect label {
-    color: #212121 !important;
-}
-
-/* Fix for Expander Headers */
 .streamlit-expanderHeader p {
-    color: #212121 !important;
+    color: white !important;
 }
 
-/* Tabs Styling */
-.stTabs [data-baseweb="tab-list"] {
-    gap: 10px;
-}
-
-.stTabs [data-baseweb="tab"] {
-    height: 40px;
-    white-space: pre-wrap;
-    background-color: white;
-    border-radius: 8px;
-    color: #1A1A1A;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    padding: 0 20px;
-}
-
-.stTabs [aria-selected="true"] {
-    background-color: #B71C1C;
-    color: white;
+footer,
+header {
+    visibility: hidden;
 }
